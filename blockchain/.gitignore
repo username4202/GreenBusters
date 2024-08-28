@@ -1,0 +1,28 @@
+#제외할 파일 및 디렉토리
+/node_modules
+.env
+/package-lock.json
+/package.json
+/tsconfig.json
+/hardhat.config.ts
+
+!test
+!README.md
+!contracts
+!deploy
+
+
+# Hardhat files
+/cache
+/artifacts
+
+# TypeChain files
+/typechain
+/typechain-types
+
+# solidity-coverage files
+/coverage
+/coverage.json
+
+# Hardhat Ignition default folder for deployments against a local node
+ignition/deployments/chain-31337
