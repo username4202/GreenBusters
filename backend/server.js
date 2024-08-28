@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const connectDB = require('./utils/database');  // MongoDB 연결 함수
 const claimRoutes = require('./routes/claimRoutes');
+const verifiedDataRoutes = require('./routes/verifiedDataRoutes');
 const cors = require('cors');
 
 const app = express();
@@ -17,6 +18,7 @@ app.use(express.json());
 
 // API 라우트 설정 (반드시 React 정적 파일 제공 이전에 설정)
 app.use('/api/claims', claimRoutes);
+app.use('/api/verified', verifiedDataRoutes); // 새로운 라우트 추가
 
 // API 테스트 라우트 추가
 app.use('/api/test', (req, res) => {

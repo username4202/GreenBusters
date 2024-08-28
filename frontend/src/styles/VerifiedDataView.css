@@ -1,0 +1,73 @@
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* 화면 전체를 사용하여 중앙에 배치 */
+    font-size: 18px;
+    color: #2c3e50;
+  }
+  
+  .spinner {
+    font-size: 48px;
+    margin-bottom: 20px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .verified-data-container {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .title {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+  }
+  
+  .info-section {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .info-section p {
+    margin: 8px 0;
+  }
+  
+  .data-section {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 20px;
+  }
+  
+  .data-section h2 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+  }
+  
+  .integrity-message {
+    background-color: #e0f7fa;
+    border: 1px solid #81d4fa;
+    padding: 15px;
+    border-radius: 8px;
+    color: #00796b;
+    font-weight: bold;
+    text-align: center;
+  }
+  

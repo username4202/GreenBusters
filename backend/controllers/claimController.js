@@ -88,8 +88,9 @@ exports.verifyClaim = async (req, res) => {
       claim.isVerified = true;
       console.log('클레임이 검증되었습니다. 블록체인 업로드 및 이메일 전송 준비...');
       // 블록체인에 업로드 및 이메일 전송
-      // await uploadToBlockchain(claim);
-      await sendCongratulationEmail(claim.email);
+      const transaction = await uploadToBlockchain(claim.dataHash);
+      //await sendCongratulationEmail(claim.email, transaction);
+      await sendEmailWithQRCode(claim.email, transaction);
       console.log('이메일 전송 완료:', claim.email);
     }
 

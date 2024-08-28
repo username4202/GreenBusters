@@ -3,7 +3,8 @@ import '../styles/ClaimDetail.css'; // CSS 파일 임포트
 
 function ClaimDetail({ claim, onClose }) {
   const handleVote = (vote) => {
-    fetch('http://localhost:5000/api/claims/verify', {
+    const serverIp = process.env.REACT_APP_SERVER_IP;  // 환경 변수에서 서버 IP 가져오기
+    fetch('http://${serverIp}:5000/api/claims/verify', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

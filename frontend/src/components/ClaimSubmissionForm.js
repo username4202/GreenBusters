@@ -41,7 +41,8 @@ function ClaimSubmissionForm() {
     };
 
     try {
-      const response = await fetch('http://localhost:5000/api/claims/submit', {
+      const serverIp = process.env.REACT_APP_SERVER_IP; 
+      const response = await fetch('http://${serverIp}:5000/api/claims/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
