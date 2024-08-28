@@ -62,15 +62,19 @@ cd backend
 npm install
 ```
 
-환경 변수를 설정합니다. `.env` 파일을 생성하고 아래와 같은 내용을 추가하세요:
+환경 변수를 설정합니다. backend 디렉토리 내에  `.env` 파일을 생성하고 아래와 같은 내용을 추가하세요:
 
 ```env
-DATABASE_URL=mongodb://localhost:27017/greenbusters
 ETHEREUM_NETWORK=http://localhost:8545
 IPFS_API_URL=https://ipfs.infura.io:5001
 EMAIL_HOST=smtp.gmail.com
 EMAIL_USER=your-email@gmail.com
 EMAIL_PASS=your-email-password
+PORT=5000
+MONGO_URI=mongodb://localhost:27017/greenbusters # 내아이디로 수정해야함.
+INFURA_PROJECT_ID=InfuraKey
+INFURA_PROJECT_SECRET=
+
 ```
 
 서버를 실행합니다:
