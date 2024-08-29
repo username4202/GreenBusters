@@ -1,5 +1,7 @@
 const { exec } = require('child_process');
 const path = require('path');
+const Transaction = require('../models/transactionModel'); // Claim 모델을 가져옵니다
+const sendEmailWithQRCode = require('../services/mailService').sendEmailWithQRCode; 
 
 async function getHashFromBlockchain(contractAddress, userAddress) {
     return new Promise((resolve, reject) => {
@@ -44,15 +46,22 @@ async function uploadToBlockchain(dataHash) {
             }
 
             try {
-                // stdout을 라인별로 나눔
-                const outputLines = stdout.split('\n');
+                console.log(stdout);
 
-                // 트랜잭션 해시, 계약 주소, 사용자 주소를 찾음
-                const transactionHash = outputLines.find(line => line.includes("Transaction hash:")).split(": ")[1].trim();
-                const contractAddress = outputLines.find(line => line.includes("Contract Address:")).split(": ")[1].trim();
-                const userAddress = outputLines.find(line => line.includes("User Address:")).split(": ")[1].trim();
+                // 정규식을 사용하여 필요한 정보를 추출
+                const transactionHashMatch = stdout.match(/Transaction hash:\s*(0x[0-9a-fA-F]+)/);
+                const contractAddressMatch = stdout.match(/Contract Addresss:\s*(0x[0-9a-fA-F]+)/);
+                const userAddressMatch = stdout.match(/address:\s*'0x[0-9a-fA-F]+'/);
 
-                // 모델에 저장
+                const transactionHash = transactionHashMatch ? transactionHashMatch[1] : null;
+                const contractAddress = contractAddressMatch ? contractAddressMatch[1] : null;
+                const userAddress = userAddressMatch ? userAddressMatch[0].split("'")[1] : null;
+
+                if (!transactionHash || !contractAddress || !userAddress) {
+                    throw new Error('필요한 데이터를 모두 찾지 못했습니다.');
+                }
+
+                // 트랜잭션 정보를 저장
                 const transaction = new Transaction({
                     transactionHash,
                     contractAddress,

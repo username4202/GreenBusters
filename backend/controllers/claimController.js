@@ -1,6 +1,7 @@
 const crypto = require('crypto');
 const Claim = require('../models/claimModel');
-const { sendCongratulationEmail } = require('../services/mailService');
+const { sendCongratulationEmail, sendEmailWithQRCode } = require('../services/mailService');
+const { uploadToBlockchain } = require('../services/blockchainService');
 
 exports.submitClaim = async (req, res) => {
   const { companyName, email, jsonContent } = req.body;
