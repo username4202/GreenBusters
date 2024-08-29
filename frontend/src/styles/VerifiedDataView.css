@@ -1,73 +1,129 @@
-.loading-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; /* 화면 전체를 사용하여 중앙에 배치 */
-    font-size: 18px;
-    color: #2c3e50;
-  }
-  
-  .spinner {
-    font-size: 48px;
-    margin-bottom: 20px;
-    animation: spin 1s linear infinite;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
-  .verified-data-container {
-    margin: 20px auto;
-    max-width: 800px;
-    padding: 20px;
-    background-color: #f7f7f7;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+body {
     font-family: 'Arial', sans-serif;
+    background-color: #f0f4f3;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .h1 {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+  }
+  .verified-data-container .header h1 {
+    font-size: 2rem;
+    /* 나머지 스타일 */
+  }
+  .verified-data-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .verified-data-container .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2f4f4f; /* 다크 그린 배경 */
+    padding: 10px; /* 패딩을 줄여 제목이 과도하게 커지지 않도록 */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
   }
   
   .title {
+    font-size: 1.5rem; /* 폰트 크기를 줄여 제목이 너무 크게 보이지 않도록 */
+    font-weight: bold;
+    color: #ffffff;
     text-align: center;
-    color: #2c3e50;
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
+    letter-spacing: 1px;
+    margin: 0; /* 제목 주변의 여백을 줄임 */
+  }
+  .menu-button {
+    background-color: #8cc63f;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .menu-button:hover {
+    background-color: #7bb233;
   }
   
   .info-section {
+    background-color: #e6f3e6;
+    padding: 10px;
+    border-radius: 5px;
     margin-bottom: 20px;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  
-  .info-section p {
-    margin: 8px 0;
+    color: #555;
+    font-size: 14px;
   }
   
   .data-section {
-    background-color: #ffffff;
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid #e0e0e0;
     margin-bottom: 20px;
   }
   
   .data-section h2 {
+    font-size: 16px;
+    color: #333;
     margin-bottom: 10px;
-    color: #2c3e50;
+  }
+  
+  .data-card {
+    background-color: #e6f3e6;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .data-card h3 {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .data-card p {
+    margin: 2px 0;
+    font-size: 13px;
+    color: #555;
   }
   
   .integrity-message {
-    background-color: #e0f7fa;
-    border: 1px solid #81d4fa;
-    padding: 15px;
-    border-radius: 8px;
-    color: #00796b;
-    font-weight: bold;
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
     text-align: center;
+  }
+  
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .spinner {
+    font-size: 24px;
+    color: #8cc63f;
+    margin-bottom: 10px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
   

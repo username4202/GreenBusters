@@ -1,6 +1,8 @@
 const nodemailer = require('nodemailer');
 const QRCode = require('qrcode');
 const { getLocalIPAddress } = require('../utils/network');
+const path = require('path');
+const fs = require('fs');
 
 
 
@@ -46,6 +48,9 @@ async function sendEmailWithQRCode(email, transaction) {
 
     // QR 코드 생성
     const qrCodeData = await QRCode.toDataURL(url);
+    // QR 코드 생성 및 파일로 저장
+    const qrCodePath = path.join(__dirname, 'qrcode.png');
+    await QRCode.toFile(qrCodePath, url);
 
     // 이메일 설정
     let transporter = nodemailer.createTransport({
@@ -65,7 +70,7 @@ async function sendEmailWithQRCode(email, transaction) {
         <h1>축하합니다! 검증이 완료되었습니다.</h1>
         <p>귀하의 기업이 GreenBusters에서 성공적으로 검증되었습니다.</p>
         <h2>QR 코드</h2>
-        <img src="${qrCodeData}" alt="QR Code" />
+        <img src="cid:qrcode" alt="QR Code" />
         <p>아래의 URL을 통해서도 확인하실 수 있습니다:</p>
         <a href="${url}">${url}</a>
         <h2>트랜잭션 정보:</h2>
@@ -76,12 +81,23 @@ async function sendEmailWithQRCode(email, transaction) {
         </ul>
         <p>감사합니다.<br/>GreenBusters 드림</p>
       `,
+      attachments: [
+        {
+          filename: 'qrcode.png',
+          path: qrCodePath,
+          cid: 'qrcode' // 이메일 내에서 이 이미지를 참조할 수 있게 설정
+        }
+      ]
     });
 
     console.log('이메일 전송 완료:', info.response);
-  } catch (error) {
+
+    // QR 코드 파일 삭제 (필요에 따라)
+    fs.unlinkSync(qrCodePath);
+
+    } catch (error) {
     console.error('Error sending email with QR code:', error);
-  }
+    }
 }
 
 module.exports = { sendEmailWithQRCode };

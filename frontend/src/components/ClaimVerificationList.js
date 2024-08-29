@@ -8,7 +8,7 @@ function ClaimVerificationList() {
   useEffect(() => {
     const serverIp = process.env.REACT_APP_SERVER_IP; 
     console.log("Fetching pending claims..."); // 로그 추가
-    fetch('http://${serverIp}:5000/api/claims/pending')
+    fetch(`http://${serverIp}:5000/api/claims/pending`)
       .then(response => {
         console.log("Received response:", response); // 로그 추가
         return response.json();

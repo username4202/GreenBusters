@@ -1,0 +1,157 @@
+/* 전체 페이지 설정 */
+.main-page {
+    font-family: 'Poppins', Arial, sans-serif;
+    color: #ffffff;
+  }
+  
+  /* 헤더 스타일 */
+  .header {
+    background-color: #3A6551; /* 이미지와 유사한 초록색 배경 */
+    text-align: center;
+    padding: 120px 20px;
+  }
+  
+  .header h1 {
+    font-family: 'Orelega One', serif; /* Orelega One 폰트 적용 */
+    font-size: 4.5em;
+    font-weight: 400;
+    color: #ffffff; /* 하얀색 글씨 */
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .header-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .btn-primary {
+    background-color: #F3F0E2;
+    color: #000000;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Poppins', Arial, sans-serif;
+  }
+  
+  .btn-secondary {
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Poppins', Arial, sans-serif;
+  }
+  
+  /* 코어 기능 섹션 */
+  .core-features {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .core-features h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: #FF6200;
+    margin-bottom: 40px;
+  }
+  
+  .features-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+  
+  .features-content img {
+    width: 300px;
+    border-radius: 10px;
+  }
+  
+  .features-list h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+  }
+  
+  .features-list p {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 1em;
+    color: #dddddd;
+  }
+  
+  /* CTA 섹션 */
+  .cta-section {
+    background-color: #ffffff;
+    color: #3A6551;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  /* FAQ 섹션 */
+  .faq-section {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .faq-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+  }
+  
+  .faq-content {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+  }
+  
+  .faq-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+  
+  .faq-item p {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 1em;
+    color: #333333;
+  }
+  
+  /* 푸터 섹션 */
+  .footer {
+    background-color: #333333;
+    text-align: center;
+    padding: 20px;
+    color: #ffffff;
+  }
+  
+  .footer p {
+    margin: 5px 0;
+    font-size: 0.9em;
+  }
+  
